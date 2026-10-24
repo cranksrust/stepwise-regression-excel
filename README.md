@@ -83,7 +83,7 @@ More help: https://cranksrust.github.io/stepwise-regression-excel/support.html
 
 ## About
 
-Built by the HOUMBA Class of '28 for Professor Tom Sager's statistics course.
+Built by the HOUMBA Class of '28 for Professor Tom Sager's BA 286T Statistics course, Texas MBA at Houston, Fall 2026.
 
 - [MAINTAINING.md](MAINTAINING.md): how the add-in works, hosting, tests and publishing to the Office Add-ins store.
 - [vba/](vba/): the original VBA (.xlam) version for desktop Excel, kept as a backup.
