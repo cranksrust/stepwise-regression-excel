@@ -12,7 +12,7 @@ const assert = require("node:assert");
 const { chromium } = require("playwright");
 
 const ROOT = path.join(__dirname, "..");
-const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".png": "image/png", ".json": "application/json" };
+const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".png": "image/png", ".svg": "image/svg+xml", ".json": "application/json" };
 
 function serve() {
   return new Promise(resolve => {
