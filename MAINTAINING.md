@@ -14,7 +14,6 @@ The add-in is a small static website. Excel loads `docs/taskpane.html` in a side
 | `docs/taskpane.*` | Side panel UI |
 | `manifest.template.xml` | Add-in manifest with a `{{BASE_URL}}` placeholder |
 | `build-manifest.js` | Writes `docs/HOUMBA-28-Stepwise-Regression.xml` for the site's address |
-| `docs/assets/icon.svg` | Source for the Spinosaurus icon (its sail is the staircase); the `icon-*.png` sizes are rendered from it. `dino-white.svg` is the mark in the task pane header |
 | `docs/sample/home-prices.xlsx` | Fictional sample data linked from the README and install page |
 | `test/` | Engine, report and browser end-to-end tests |
 | `test/reference/` | Python reference implementation, its tests, and the sample data generator |
