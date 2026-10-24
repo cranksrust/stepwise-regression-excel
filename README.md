@@ -1,8 +1,14 @@
 # Stepwise Regression for Excel
 
-An Office web add-in that runs forward selection, backward elimination and stepwise regression in Excel for Windows, Mac and the web. It writes a report in the layout of Excel's Data Analysis > Regression tool, with Standard Error shown as RMSE. It uses no VBA, so students never touch macro security or the Trust Center.
+An Excel add-in that runs **forward selection**, **backward elimination** and **stepwise regression**, then writes a report in the same layout as Excel's Data Analysis > Regression tool (with Standard Error shown as RMSE). Variables enter and leave on **|T-Stat| ≥ 2** by default, or on p-values if you prefer.
+
+- Works in Excel for the web, Windows and Mac.
+- No macros, no Trust Center settings, nothing to install on your computer.
+- Your data never leaves your workbook.
 
 **Install page:** https://cranksrust.github.io/stepwise-regression-excel/
+
+![Example report](docs/assets/report-preview.png)
 
 ## Install (students)
 
@@ -46,6 +52,23 @@ Go to **Home > Add-ins > More Add-ins > My Add-ins**. If **Upload My Add-in** is
 5. Choose the **Method** (Stepwise is the default) and **Criterion** (T-Stat, entering and removing at |T-Stat| = 2.00, is the default).
 6. Click **Run regression**. The report opens on a new sheet named **Stepwise**.
 
+### Try it with sample data
+
+Download [home-prices.xlsx](https://cranksrust.github.io/stepwise-regression-excel/sample/home-prices.xlsx): 60 fictional home sales with eight candidate predictors. Use Y `A1:A61` and X `B1:I61` on the **Home Prices** sheet, then run Forward, Backward and Stepwise and compare the steps.
+
+| Step | Forward | Backward | Stepwise |
+|---|---|---|---|
+| Start | intercept only | all 8 | intercept only |
+| 1 | + TAX_ASSESSED | − GARAGE | + TAX_ASSESSED |
+| 2 | + AGE | − BATHROOMS | + AGE |
+| 3 | + SQFT | − BEDROOMS | + SQFT |
+| 4 | + MILES_DOWNTOWN | − TAX_ASSESSED | + MILES_DOWNTOWN |
+| 5 | + SCHOOL_RATING | | − TAX_ASSESSED |
+| 6 | | | + SCHOOL_RATING |
+| Final R Square | 0.9082 (5 terms) | 0.9070 (4 terms) | 0.9070 (4 terms) |
+
+TAX_ASSESSED looks like the best single predictor, but it only echoes the real drivers. Stepwise drops it once they are in the model (its T-Stat falls to 1.58). Forward selection never re-checks, so it ends with TAX_ASSESSED still in the model at a T-Stat of −0.85.
+
 ### If something goes wrong
 
 | Problem | Fix |
@@ -58,53 +81,10 @@ Go to **Home > Add-ins > More Add-ins > My Add-ins**. If **Upload My Add-in** is
 
 More help: https://cranksrust.github.io/stepwise-regression-excel/support.html
 
-## How it works
+## About
 
-The add-in is a small static website. Excel loads `docs/taskpane.html` in a side panel, and everything runs in the browser inside Excel: no server, no data leaves the workbook. GitHub Pages hosts it for free.
+Built by the HOUMBA Class of '28.
 
-| Path | Purpose |
-|---|---|
-| `docs/` | The published site: task pane, engine, report writer, icons, install/help/privacy pages |
-| `docs/stepwise.js` | Regression engine and t/F distributions, no Office dependency |
-| `docs/report.js` | Builds the report layout and writes it with the Excel JavaScript API |
-| `docs/taskpane.*` | Side panel UI |
-| `manifest.template.xml` | Add-in manifest with a `{{BASE_URL}}` placeholder |
-| `build-manifest.js` | Writes `docs/manifest.xml` for the site's address |
-| `test/` | Engine, report and browser end-to-end tests |
-
-## One-time setup
-
-1. **Repository and Pages.** Push this folder to the root of a public GitHub repository. In the repository, go to **Settings > Pages**, set **Source** to **Deploy from a branch**, branch **main**, folder **/docs**, and save. The site appears at `https://<github-user>.github.io/<repo>/` within a minute or two.
-2. **Manifest.** Run `node build-manifest.js https://<github-user>.github.io/<repo>`, then commit and push `docs/manifest.xml`.
-3. **Validate.** Run `npx office-addin-manifest validate docs/manifest.xml`. It should report the manifest as valid.
-4. **Try it.** Open `https://<github-user>.github.io/<repo>/`, download `manifest.xml`, and follow the Excel for the web steps on that page.
-
-## Publishing to the Office Add-ins store (AppSource)
-
-1. **Publisher account.** Create a Microsoft Partner Center account and enroll in the Microsoft 365 and Copilot program. Use an account the program will keep, since the listing lives there. Verification can take several days.
-2. **New offer.** In Partner Center, create a new **Office add-in** offer named **Stepwise Regression** and upload `docs/manifest.xml`.
-3. **Listing details:**
-   - Short and long description (start from the manifest description and the install page).
-   - Logo: `docs/assets/icon-300.png`.
-   - Screenshots at 1366x768: the task pane next to a finished report works well.
-   - Privacy policy URL: `https://<github-user>.github.io/<repo>/privacy.html`
-   - Support URL: `https://<github-user>.github.io/<repo>/support.html`
-   - Category: Data Analytics.
-4. **Notes for certification.** Tell the testers it needs no sign-in, and give them a short data set and steps, for example: "Put numbers in A1:D20 with headers in row 1, open Stepwise Regression from the Home tab, use A1:A20 as Y and B1:D20 as X, click Run regression."
-5. **Submit.** Review usually takes several business days. Fix anything the report flags and resubmit.
-
-Code changes in `docs/` go live as soon as they are pushed, with no store review. Changes to the manifest (name, icons, buttons, permissions, version) need a new submission, and the `<Version>` number must go up.
-
-## Development
-
-```
-npm install            # only needed for the browser end-to-end test
-npm test               # engine and report tests (Node 18+)
-npm run test:e2e       # task pane in headless Chromium against a mock workbook
-```
-
-`test/make_fixtures.py` regenerates `test/fixtures.json` from the Python reference implementation in the VBA project (`excel-stepwise-regression/tests`) and scipy.
-
-## Handoff
-
-The add-in keeps working only while the GitHub repository and Pages site stay up and the Partner Center account stays active. Before the maintainer leaves, transfer the repository (**Settings > Transfer ownership**) and the Partner Center offer to the next owner.
+- [MAINTAINING.md](MAINTAINING.md): how the add-in works, hosting, tests and publishing to the Office Add-ins store.
+- [vba/](vba/): the original VBA (.xlam) version for desktop Excel, kept as a backup.
+- Released under the [MIT License](LICENSE).

@@ -1,7 +1,7 @@
 """Generates fixtures.json: synthetic datasets with expected results from the
-Python reference port (../../excel-stepwise-regression/tests) and scipy.
+Python reference port (test/reference) and scipy.
 
-Usage: REFERENCE_DIR=path/to/excel-stepwise-regression/tests python make_fixtures.py [Hoyda.xlsx]
+Usage: python make_fixtures.py [path/to/Hoyda_Discrimination.xlsx]
 The optional Hoyda workbook adds a local-only hoyda.json (not committed).
 """
 import json
@@ -12,7 +12,7 @@ import numpy as np
 from scipy import stats
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.environ.get("REFERENCE_DIR", os.path.join(HERE, "..", "..", "excel-stepwise-regression", "tests")))
+sys.path.insert(0, os.environ.get("REFERENCE_DIR", os.path.join(HERE, "reference")))
 import reference_stepwise as ref  # noqa: E402
 
 

@@ -5,8 +5,8 @@
            xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
            xsi:type="TaskPaneApp">
   <Id>42dd67d1-0351-4755-b8dd-181abef578d6</Id>
-  <Version>1.0.0.0</Version>
-  <ProviderName>McCombs HOUMBA Class of '28</ProviderName>
+  <Version>1.0.1.0</Version>
+  <ProviderName>HOUMBA Class of '28</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Stepwise Regression"/>
   <Description DefaultValue="Forward, backward and stepwise regression with T-Stat or p-value criteria, reported in the layout of Excel's Data Analysis Regression tool."/>
