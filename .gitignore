@@ -1,3 +1,5 @@
 node_modules/
 test/hoyda.json
 *.png.tmp
+__pycache__/
+.pytest_cache/
