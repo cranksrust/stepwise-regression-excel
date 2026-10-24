@@ -1,4 +1,4 @@
-# Stepwise Regression: VBA version (backup)
+# HOUMBA-28 Stepwise Regression: VBA version (backup)
 
 The original desktop-only version of the add-in, kept as a backup. **Most people should use the web add-in in the [main README](../README.md)**, which needs no macros or Trust Center changes and also works in Excel for the web.
 

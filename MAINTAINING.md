@@ -1,4 +1,4 @@
-# Maintaining Stepwise Regression for Excel
+# Maintaining HOUMBA-28 Stepwise Regression
 
 Notes for whoever looks after the add-in. Student instructions are in the [README](README.md).
 
@@ -28,8 +28,10 @@ The add-in is a small static website. Excel loads `docs/taskpane.html` in a side
 
 ## Publishing to the Office Add-ins store (AppSource)
 
+The full step-by-step guide, listing text, screenshots and reviewer notes are in [store/SUBMISSION.md](store/SUBMISSION.md). Summary:
+
 1. **Publisher account.** Create a Microsoft Partner Center account and enroll in the Microsoft 365 and Copilot program. Use an account the program will keep, since the listing lives there. Verification can take several days.
-2. **New offer.** In Partner Center, create a new **Office add-in** offer named **Stepwise Regression** and upload `docs/manifest.xml`.
+2. **New offer.** In Partner Center, create a new **Office add-in** offer named **HOUMBA-28 Stepwise Regression** and upload `docs/manifest.xml`.
 3. **Listing details:**
    - Short and long description (start from the manifest description and the install page).
    - Logo: `docs/assets/icon-300.png`.

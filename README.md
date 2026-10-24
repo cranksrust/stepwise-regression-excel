@@ -1,4 +1,4 @@
-# Stepwise Regression for Excel
+# HOUMBA-28 Stepwise Regression
 
 An Excel add-in that runs **forward selection**, **backward elimination** and **stepwise regression**, then writes a report in the same layout as Excel's Data Analysis > Regression tool (with Standard Error shown as RMSE). Variables enter and leave on **|T-Stat| ≥ 2** by default, or on p-values if you prefer.
 

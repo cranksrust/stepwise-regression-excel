@@ -5,10 +5,10 @@
            xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
            xsi:type="TaskPaneApp">
   <Id>42dd67d1-0351-4755-b8dd-181abef578d6</Id>
-  <Version>1.0.1.0</Version>
+  <Version>1.0.2.0</Version>
   <ProviderName>HOUMBA Class of '28</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Stepwise Regression"/>
+  <DisplayName DefaultValue="HOUMBA-28 Stepwise Regression"/>
   <Description DefaultValue="Forward, backward and stepwise regression with T-Stat or p-value criteria, reported in the layout of Excel's Data Analysis Regression tool."/>
   <IconUrl DefaultValue="https://cranksrust.github.io/stepwise-regression-excel/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://cranksrust.github.io/stepwise-regression-excel/assets/icon-64.png"/>
@@ -78,7 +78,7 @@
         <bt:Url id="Support.Url" DefaultValue="https://cranksrust.github.io/stepwise-regression-excel/support.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="GetStarted.Title" DefaultValue="Stepwise Regression is ready"/>
+        <bt:String id="GetStarted.Title" DefaultValue="HOUMBA-28 Stepwise Regression is ready"/>
         <bt:String id="Group.Label" DefaultValue="Stepwise"/>
         <bt:String id="Button.Label" DefaultValue="Stepwise Regression"/>
       </bt:ShortStrings>
