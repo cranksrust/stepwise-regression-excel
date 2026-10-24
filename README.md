@@ -12,12 +12,12 @@ An Excel add-in that runs **forward selection**, **backward elimination** and **
 
 ## Install (students)
 
-The add-in is not in the Office Add-ins store yet, so it is installed from a small file called `manifest.xml`. This takes about two minutes and only needs to be done once per browser or computer.
+The add-in is not in the Office Add-ins store yet, so it is installed from a small file called `HOUMBA-28-Stepwise-Regression.xml` (Microsoft calls this a *manifest*: it tells Excel the add-in's name, button and web address). This takes about two minutes and only needs to be done once per browser or computer.
 
-### Step 1: Download the manifest
+### Step 1: Download the add-in file
 
 1. Go to https://cranksrust.github.io/stepwise-regression-excel/
-2. Click **Download manifest.xml** and save it somewhere easy to find, such as Downloads.
+2. Click **Download the add-in file** and save `HOUMBA-28-Stepwise-Regression.xml` somewhere easy to find, such as Downloads.
 
 ### Step 2: Add it to Excel
 
@@ -29,14 +29,14 @@ The add-in is not in the Office Add-ins store yet, so it is installed from a sma
    - Narrow window: click the **⋯** at the right end of the Home ribbon, or use the **Insert** tab, **Add-ins**.
 3. Click **More Add-ins** (on some versions, **Advanced**).
 4. Open the **My Add-ins** tab and click **Upload My Add-in** near the top right.
-5. Click **Browse**, choose `manifest.xml`, and click **Upload**.
+5. Click **Browse**, choose `HOUMBA-28-Stepwise-Regression.xml`, and click **Upload**.
 6. A **Stepwise Regression** button appears on the Home tab (in a narrow window, it may be under the **⋯**).
 
 **Excel for Mac**
 
 1. Quit Excel.
 2. In Finder, press **Cmd+Shift+G**, paste `~/Library/Containers/com.microsoft.Excel/Data/Documents/wef` and press Return. If it says the folder does not exist, go to `~/Library/Containers/com.microsoft.Excel/Data/Documents` and create a folder named `wef`.
-3. Copy `manifest.xml` into the `wef` folder.
+3. Copy `HOUMBA-28-Stepwise-Regression.xml` into the `wef` folder.
 4. Open Excel and a workbook, then go to **Home > Add-ins** (or **Insert > Add-ins > My Add-ins**). **Stepwise Regression** is listed under the developer or shared add-ins section. Click it once and the button appears on the Home tab.
 
 **Excel for Windows (desktop)**
@@ -75,7 +75,7 @@ TAX_ASSESSED looks like the best single predictor, but it only echoes the real d
 |---|---|
 | No **Add-ins** button | The window is too narrow. Check under **⋯** on the Home ribbon or the **Insert** tab, or widen the window. |
 | **Upload My Add-in** is missing or greyed out | Your school or work account may block custom add-ins. Sign in to office.com with a personal Microsoft account and try again. |
-| The button disappeared | In Excel for the web, uploaded add-ins are remembered per browser. Upload the manifest again. |
+| The button disappeared | In Excel for the web, uploaded add-ins are remembered per browser. Upload the add-in file again. |
 | "Every X column must start and end on the same rows as Y" | Select the same rows for Y and X, for example `A4:A48` and `B4:F48`. |
 | "The model with every predictor cannot be estimated" | Two X columns carry the same information (for example one is a fixed number minus the other). Remove one, or use Forward or Stepwise. |
 

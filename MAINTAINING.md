@@ -13,7 +13,7 @@ The add-in is a small static website. Excel loads `docs/taskpane.html` in a side
 | `docs/report.js` | Builds the report layout and writes it with the Excel JavaScript API |
 | `docs/taskpane.*` | Side panel UI |
 | `manifest.template.xml` | Add-in manifest with a `{{BASE_URL}}` placeholder |
-| `build-manifest.js` | Writes `docs/manifest.xml` for the site's address |
+| `build-manifest.js` | Writes `docs/HOUMBA-28-Stepwise-Regression.xml` for the site's address |
 | `docs/sample/home-prices.xlsx` | Fictional sample data linked from the README and install page |
 | `test/` | Engine, report and browser end-to-end tests |
 | `test/reference/` | Python reference implementation, its tests, and the sample data generator |
@@ -22,16 +22,16 @@ The add-in is a small static website. Excel loads `docs/taskpane.html` in a side
 ## One-time setup
 
 1. **Repository and Pages.** Push this folder to the root of a public GitHub repository. In the repository, go to **Settings > Pages**, set **Source** to **Deploy from a branch**, branch **main**, folder **/docs**, and save. The site appears at `https://<github-user>.github.io/<repo>/` within a minute or two.
-2. **Manifest.** Run `node build-manifest.js https://<github-user>.github.io/<repo>`, then commit and push `docs/manifest.xml`.
-3. **Validate.** Run `npx office-addin-manifest validate docs/manifest.xml`. It should report the manifest as valid.
-4. **Try it.** Open `https://<github-user>.github.io/<repo>/`, download `manifest.xml`, and follow the Excel for the web steps on that page.
+2. **Manifest.** Run `node build-manifest.js https://<github-user>.github.io/<repo>`, then commit and push `docs/HOUMBA-28-Stepwise-Regression.xml`.
+3. **Validate.** Run `npx office-addin-manifest validate docs/HOUMBA-28-Stepwise-Regression.xml`. It should report the manifest as valid.
+4. **Try it.** Open `https://<github-user>.github.io/<repo>/`, download `HOUMBA-28-Stepwise-Regression.xml`, and follow the Excel for the web steps on that page.
 
 ## Publishing to the Office Add-ins store (AppSource)
 
 The full step-by-step guide, listing text, screenshots and reviewer notes are in [store/SUBMISSION.md](store/SUBMISSION.md). Summary:
 
 1. **Publisher account.** Create a Microsoft Partner Center account and enroll in the Microsoft 365 and Copilot program. Use an account the program will keep, since the listing lives there. Verification can take several days.
-2. **New offer.** In Partner Center, create a new **Office add-in** offer named **HOUMBA-28 Stepwise Regression** and upload `docs/manifest.xml`.
+2. **New offer.** In Partner Center, create a new **Office add-in** offer named **HOUMBA-28 Stepwise Regression** and upload `docs/HOUMBA-28-Stepwise-Regression.xml`.
 3. **Listing details:**
    - Short and long description (start from the manifest description and the install page).
    - Logo: `docs/assets/icon-300.png`.

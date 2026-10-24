@@ -24,7 +24,7 @@ In Partner Center, go to **Marketplace offers > Microsoft 365 and Copilot** (the
 | Field | Value |
 |---|---|
 | Offer name | HOUMBA-28 Stepwise Regression |
-| Manifest | Upload `docs/manifest.xml` from this repo |
+| Manifest | Upload `docs/HOUMBA-28-Stepwise-Regression.xml` from this repo |
 | Products | Excel |
 | Platforms | Windows, Mac, Web (leave iPad unticked unless it has been tested there) |
 | Category | Data Analytics (secondary: Education) |
@@ -99,7 +99,7 @@ Error handling can be checked by setting X range to B2:I61 (different rows from 
 
 1. Review every page in the offer, then click **Review and publish**, then **Publish**.
 2. Microsoft's certification usually takes several business days. Partner Center emails the result.
-3. If the report lists issues, fix them in this repo, push (code changes go live right away), and resubmit. If the fix changes the manifest, increase `<Version>` in `manifest.template.xml`, run `node build-manifest.js https://cranksrust.github.io/stepwise-regression-excel`, and upload the new `docs/manifest.xml` with the resubmission.
+3. If the report lists issues, fix them in this repo, push (code changes go live right away), and resubmit. If the fix changes the manifest, increase `<Version>` in `manifest.template.xml`, run `node build-manifest.js https://cranksrust.github.io/stepwise-regression-excel`, and upload the new `docs/HOUMBA-28-Stepwise-Regression.xml` with the resubmission.
 4. Once it is live, update the README and install page so that installing from the store is step 1.
 
 ## Checklist
